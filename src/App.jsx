@@ -52,14 +52,11 @@ function App() {
   const winner = deriveWinner(gameBoard, players);
   const hasDraw = gameTurns.length >= 9 && !winner;
   function handleSelectSquare(rowIndex, colIndex) {
-    // // activePlayer === 'X' ? setActivePlayer('O') : setActivePlayer('X');
-    // setActivePlayer((currentPlayer) => currentPlayer === 'X' ? 'O' : 'X');
     setGameTurns((prevTurns) => {
       const newTurns = [{
         selectedSquare: {
           row: rowIndex, col: colIndex
         },
-        // player: activePlayer, We can't do this because we are merging two different states
         player: activePlayer,
       }, ...prevTurns]
 
